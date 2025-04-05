@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/Navbar"; // Importing Navbar component
+import Navbar from "../components/Navbar"; 
 import Hero from "../components/HeroSection";
 import ServicesLanding from "../components/ServiceLanding";
 import Footer from "../components/Footer";
@@ -16,7 +16,7 @@ const Home = () => {
       {/* Services Landing Section Component */}
       <ServicesLanding />
       
-      {/* Other sections or content for your home page */}
+      {/* Footer*/}
       <Footer/>
     </div>
   );

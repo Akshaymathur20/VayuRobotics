@@ -6,7 +6,6 @@ import image1 from "../assets/service1.jpg";
 import image2 from "../assets/service2.jpg";
 import image3 from "../assets/service3.jpg";
 
-// Sample service data
 const services = [
   { name: "Aerial Photography", image: image1 },
   { name: "Surveillance", image: image2 },
