@@ -17,7 +17,7 @@ const NotFound = () => {
           className="w-80 h-80"
         />
         <h1 className="text-4xl font-bold text-gray-800 mt-6 mb-2">Oops! Page Not Found</h1>
-        <p className="text-gray-600 mb-6 text-lg">It seems you’ve hit a dead end. Let’s get you back on track.</p>
+        <p className="text-gray-600 mb-6 text-lg">The page you are looking for doesn't exist or has been moved. Let’s get you back on track.</p>
         <Link
           to="/"
           className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
