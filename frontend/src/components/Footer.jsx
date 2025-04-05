@@ -6,7 +6,6 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-10">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Company Info */}
         <div>
           <h3 className="text-xl font-bold mb-4">Vayu Robotics</h3>
           <p className="text-gray-400">Providing cutting-edge drone solutions with precision and reliability.</p>
@@ -48,7 +47,7 @@ const Footer = () => {
       </div>
       
       <div className="text-center mt-8 border-t border-gray-700 pt-4 text-gray-500">
-        &copy; {new Date().getFullYear()} Company Name. All Rights Reserved.
+        &copy; {new Date().getFullYear()} Vayu Robotics. All Rights Reserved.
       </div>
     </footer>
   );
