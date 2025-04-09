@@ -37,16 +37,17 @@ const ServiceCard = ({ id, service, highlights, image, index }) => {
 
   return (
     <motion.div
-      className="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"
+      className="bg-white px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 py-30"
       custom={index}
       initial="hidden"
       animate="visible"
       variants={cardVariants}
+      
     >
       <img
         src={image}
         alt={service}
-        className="w-full h-40 object-cover rounded-lg"
+        className="w-full h-50 object-cover rounded-lg"
       />
       <h3 className="text-xl font-semibold mt-4">{service}</h3>
       <p className="mt-2 text-gray-600">
@@ -85,7 +86,7 @@ const ServicesPage = () => {
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 relative inline-block">
             <span className="relative z-10">
-              Our Full Range of <span className="text-blue-600">Services</span>
+              Our Full Range of <span className="text-yellow-600">Services</span>
             </span>
             <span className="absolute left-0 bottom-1 w-full h-2 bg-blue-100 z-0 rounded-full"></span>
           </h2>
@@ -94,7 +95,7 @@ const ServicesPage = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-8 py-10">
           {services.length === 0 ? (
             <p className="text-red-500">No services available. Please check your JSON.</p>
           ) : (

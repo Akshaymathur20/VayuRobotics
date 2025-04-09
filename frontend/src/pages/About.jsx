@@ -17,7 +17,7 @@ const About = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-5xl font-extrabold text-gray-800 mb-6 tracking-tight">
-            About <span className="text-blue-600">Us</span>
+            About <span className="text-yellow-600">Us</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We are a cutting-edge drone service provider committed to transforming industries with aerial innovation.

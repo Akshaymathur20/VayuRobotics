@@ -85,7 +85,7 @@ const ServiceDetail = () => {
 
       {/* Highlights Section */}
       {service.highlights && service.highlights.length > 0 && (
-        <section className="py-12 bg-yellow-50">
+        <section className="py-12 pl-20 bg-gray-100">
           <motion.div
             className="max-w-7xl mx-auto px-4"
             initial={{ opacity: 0 }}
