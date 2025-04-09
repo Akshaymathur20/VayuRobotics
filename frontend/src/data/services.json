@@ -1,0 +1,213 @@
+[
+  {
+    "id": 1,
+    "service": "Powerline Monitoring",
+    "description":"Drone-based inspections to ensure safe, efficient operation of transmission lines, substations, and poles.",
+    "image": "service1.jpg",
+    "highlights": [
+      {
+        "name": "Transmission Lines & Towers",
+        "description": [
+          "Real-time aerial inspection of high‑voltage lines ",
+          "Towers to detect faults ",
+          "Ensure reliability"
+        ]
+      },
+      {
+        "name": "Grid & Substations",
+        "description": [
+          "Thermal inspections",
+          " Visual surveys of substations",
+          "Grid assets for preventive maintenance."
+        ]
+      },
+      {
+        "name": "Power Plants",
+        "description": [
+          "Roof and boiler checks",
+          "Thermal imaging",
+          "Safety compliance"
+        ]
+      },
+      {
+        "name": "HV Poles (33 kV / 66 kV / 220 kV / 330 kV)",
+        "description": [
+          "Corrosion detection",
+          "Structural integrity checks",
+          "Efficient pole monitoring"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "service": "Solar Power Plant Inspection",
+    "description":"Identify thermal defects and optimize performance through aerial surveys of solar modules and infrastructure.",
+    "image": "service2.jpg",
+    "highlights": [
+      {
+        "id": 201,
+        "name": "Module & String Inspection",
+        "description": [
+          "Thermal defect mapping",
+          "Maximize uptime",
+          "Optimize performance"
+        ]
+      },
+      {
+        "name": "Balance‑of‑System Surveys",
+        "description": [
+          "Comprehensive checks",
+          "Improve component life",
+          "Reduce faults"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "service": "Road Inspection",
+    "description":"Efficiently survey highways and road layouts for maintenance planning, alignment checks, and safety audits.",
+    "image": "service3.jpg",
+    "highlights": [
+      {
+        "name": "NHAI Road Inspection",
+        "description": [
+          "Highway safety audits",
+          "Asset lifecycle tracking",
+          "Accurate pavement analysis"
+        ]
+      },
+      {
+        "name": "Road Line Planning",
+        "description": [
+          "Accurate alignment data",
+          "Future planning assistance",
+          "Intersections optimization"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "service": "Oil and Gas Line Inspection",
+    "description":"Detect leaks, monitor corrosion, and ensure right-of-way clearance with precise aerial pipeline inspections.",
+    "image": "service1.jpg",
+    "highlights": [
+      {
+        "name": "Pipeline && Facility Surveys",
+        "description": [
+          "Leak detection, corrosion monitoring, and right‑of‑way clearance checks via drone imaging. "
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "service": "Agriculture",
+    "description":"Enhance yield with drone-based spraying, crop health monitoring, precision farming, and smart seeding.",
+    "image": "service2.jpg",
+    "highlights": [
+      {
+        "name": "Drone Spraying",
+        "description": [
+          " Automated, uniform pesticide and fertilizer application to boost yields and reduce chemical use.  "
+        
+        ]
+      },
+      {
+        "name": "Precision Agriculture",
+        "description": [
+          "Multispectral mapping for data‑driven decisions on irrigation, nutrition, and field management.  "
+        ]
+      },
+      {
+        "name": "Crop Health Monitoring*",
+        "description": [
+          "  Early stress detection with NDVI imaging to optimize interventions and minimize losses.  "
+        ]
+      },
+      {
+        "name": "Seed Dropping",
+        "description": [
+          "  Rapid, targeted seeding of cover crops or reforestation sites in difficult terrains. "
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "service": "Construction",
+    "description":"Track site progress, create 3D models, and manage construction timelines with real-time drone data.",
+    "image": "service3.jpg",
+    "highlights": [
+      {
+        "name": "Planning & Design Support",
+        "description": [
+          "   3D site modeling to visualize proposals, optimize layouts, and streamline pre‑construction.    "
+        
+        ]
+      },
+      {
+        "name": "Progress Monitoring",
+        "description": [
+          "  Regular aerial captures to track build status, identify delays, and inform stakeholders."
+        ]
+      },
+      {
+        "name": "Timeline Management",
+        "description": [
+          "  Integrated drone data for milestone verification, resource planning, and on‑time delivery. "
+        ]
+      },
+      {
+        "name": "3D Maps & Volume Metric",
+        "description": [
+          "   Accurate earthwork calculations and stockpile measurements from photogrammetric point clouds."
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "service": "Disaster Management, Mapping & Survey ",
+    "description":"Enable rapid response and accurate land-use mapping in disaster-affected or risk-prone zones.",
+    "image": "service1.jpg",
+    "highlights": [
+      {
+        "name": "Emergency Response Mapping",
+        "description": [
+          "Rapid area mapping for damage assessment, search‑and‑rescue planning, and relief coordination.  "
+        
+        ]
+      },
+      {
+        "name": "Topographic & Land‑Use Surveys",
+        "description": [
+          "High‑accuracy DEMs and orthomosaics for flood, landslide, and hazard‑zone analysis."
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "service": "Consultation & Training ",
+    "description":"Customized UAV research, industrial drone training, and consulting for scalable drone operations.",
+    "image": "service2.jpg",
+    "highlights": [
+      {
+        "name": "R&D Support",
+        "description": [
+          " Customized UAV research, prototype development, and proof‑of‑concept services for new applications "
+        
+        ]
+      },
+      {
+        "name": "Industrial Drone Training",
+        "description": [
+          "  Hands‑on courses covering assembly, maintenance, flight operations, and regulatory compliance."
+        ]
+      }
+    ]
+  }
+]

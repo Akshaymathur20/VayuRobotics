@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Changed from react-scroll to react-router-dom
+import { Link } from "react-router-dom"; 
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {

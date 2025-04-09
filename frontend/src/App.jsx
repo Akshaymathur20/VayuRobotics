@@ -6,19 +6,18 @@ import About from "./pages/About";
 import ContactMe from "./pages/Contact";
 import ServiceDetail from "./components/ServiceDetail";
 import ScrollToTop from "./components/ScrollTop";
-import NotFound from "./pages/NotFound";
+
 
 function App() {
   return (
     <Router>
-      <ScrollToTop/>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactMe />} />
-        <Route path="/services/:serviceID" element={<ServiceDetail/>}/>
-        <Route path="*" element={<NotFound />} />
+        <Route path="/services/:id" element={<ServiceDetail />} />
       </Routes>
     </Router>
   );

@@ -1,100 +1,127 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { motion } from "framer-motion";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import services from "../data/services.json";
 import image1 from "../assets/service1.jpg";
 import image2 from "../assets/service2.jpg";
 import image3 from "../assets/service3.jpg";
 
-// All service data
-const services = [
-  {
-    name: "Aerial Photography",
-    description: "Capture stunning aerial photos and videos using high-resolution cameras mounted on drones. Perfect for real estate, events, and landscape shots.",
-    image: image1,
-  },
-  {
-    name: "Surveillance",
-    description: "Advanced surveillance using drones to ensure safety and monitor areas with precision. Ideal for industrial, private, and public spaces.",
-    image: image2,
-  },
-  {
-    name: "Agriculture Monitoring",
-    description: "Track crop health, irrigation needs, and field patterns using drone-based data collection and imagery. Enhance yield and reduce waste.",
-    image: image3,
-  },
-  {
-    name: "Delivery Drones",
-    description: "Experience fast, contactless deliveries using our intelligent drone delivery systems built for modern logistics.",
-    image: image1,
-  },
-  {
-    name: "Inspection",
-    description: "Access hard-to-reach areas for detailed visual inspections. Reduce risk and increase accuracy in infrastructure checks.",
-    image: image1,
-  },
-  {
-    name: "Disaster Management",
-    description: "Rapid aerial surveys during emergencies to assess damage, find survivors, and assist rescue teams efficiently.",
-    image: image2,
-  },
-  {
-    name: "Mapping & Surveying",
-    description: "Generate accurate 2D/3D maps and survey terrains quickly using GPS-enabled drones for urban planning or land assessments.",
-    image: image3,
-  },
-  {
-    name: "Construction Monitoring",
-    description: "Monitor construction site progress, track materials, and ensure safety compliance with live drone feeds.",
-    image: image1,
-  },
-  {
-    name: "Search & Rescue",
-    description: "Deploy drones in critical rescue missions to locate people faster in inaccessible or risky environments.",
-    image: image2,
-  },
-  {
-    name: "Infrastructure Maintenance",
-    description: "Regular maintenance checks of power lines, bridges, and towers with high-zoom drone visuals and thermal imagery.",
-    image: image3,
-  },
-];
+const imageMap = {
+  "service1.jpg": image1,
+  "service2.jpg": image2,
+  "service3.jpg": image3,
+};
 
-// Slug function
-const slugify = (name) => name.toLowerCase().replace(/\s+/g, "-");
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.15, duration: 0.5, ease: "easeOut" },
+  }),
+};
 
 const ServiceDetail = () => {
-  const { serviceId } = useParams();
+  const { id } = useParams();
   const navigate = useNavigate();
-
-  const service = services.find((s) => slugify(s.name) === serviceId);
+  const service = services.find((s) => s.id === parseInt(id));
 
   if (!service) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-xl font-semibold text-gray-700">Service not found!</p>
-      </div>
+      <>
+        <Navbar />
+        <div className="min-h-screen flex items-center justify-center text-xl text-red-500">
+          Service not found
+        </div>
+        <Footer />
+      </>
     );
   }
 
   return (
     <>
       <Navbar />
-      <div className="py-16 bg-gray-100 min-h-screen">
-        <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-2xl overflow-hidden">
-          <img src={service.image} alt={service.name} className="w-full h-96 object-cover" />
-          <div className="p-8">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">{service.name}</h2>
-            <p className="text-gray-600 text-lg">{service.description}</p>
-            <button
-              onClick={() => navigate(-1)}
-              className="mt-8 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
-            >
-              Go Back
-            </button>
+
+      {/* Main Service Section */}
+      <section className="pt-36 pb-16 px-4 bg-gray-100">
+        <motion.div
+          className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-white p-6 rounded-xl shadow"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <div>
+            <img
+              src={imageMap[service.image] || image1}
+              alt={service.name}
+              className="w-full h-96 object-cover rounded-lg shadow-md"
+            />
           </div>
-        </div>
-      </div>
+          <div>
+            <h1 className="text-3xl font-bold mb-4 text-gray-800">
+              {service.service}
+            </h1>
+            <p className="text-lg text-gray-600 mb-6">{service.description}</p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="/brochures/sample-brochure.pdf"
+                download
+                className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition text-center"
+              >
+                Download Brochure
+              </a>
+              <button
+                className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition text-center"
+                onClick={() => navigate("/contact")}
+              >
+                Contact Us
+              </button>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Highlights Section */}
+      {service.highlights && service.highlights.length > 0 && (
+        <section className="py-12 bg-yellow-50">
+          <motion.div
+            className="max-w-7xl mx-auto px-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+              Key Highlights
+            </h2>
+            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+              {service.highlights.map((highlight, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white p-6 rounded-lg shadow hover:shadow-xl transition duration-300"
+                  custom={index}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={cardVariants}
+                >
+                  <h3 className="text-lg font-semibold text-yellow-800 mb-2 py-10">
+                    {highlight.name}
+                  </h3>
+                  <ul className="list-disc list-inside text-gray-700">
+                    {highlight.description.map((desc, i) => (
+                      <li key={i}>{desc.trim()}</li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </section>
+      )}
+
       <Footer />
     </>
   );

@@ -1,59 +1,3 @@
-// import React from "react";
-// import { Link } from "react-scroll";
-// import { motion } from "framer-motion";
-
-// const Hero = () => {
-//   return (
-//     <section className="relative h-screen flex flex-col justify-center items-center text-center bg-gray-900 text-white overflow-hidden">
-//       {/* Background Video/Image */}
-//       <video
-//         autoPlay
-//         loop
-//         muted
-//         className="absolute w-full h-full object-cover opacity-40"
-//         src="/drone-video.mp4"
-//       ></video>
-
-//       {/* Overlay */}
-//       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-
-//       {/* Hero Content */}
-//       <motion.div
-//         initial={{ opacity: 0, y: 50 }}
-//         animate={{ opacity: 1, y: 0 }}
-//         transition={{ duration: 1 }}
-//         className="relative z-10 max-w-3xl px-6"
-//       >
-//         <h1 className="text-5xl font-bold leading-tight">
-//           Revolutionizing Aerial Solutions with Smart Drones 🚀
-//         </h1>
-//         <p className="mt-4 text-lg text-gray-300">
-//           High-Precision, Reliable, and Affordable Drone Solutions for Your Business.
-//         </p>
-//         <div className="mt-6 flex space-x-6 justify-center">
-//           <motion.button
-//             whileHover={{ scale: 1.1 }}
-//             whileTap={{ scale: 0.9 }}
-//             className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-600"
-//           >
-//             Get Started
-//           </motion.button>
-//           <Link to="about" smooth={true} duration={500}>
-//             <motion.button
-//               whileHover={{ scale: 1.1 }}
-//               whileTap={{ scale: 0.9 }}
-//               className="bg-transparent border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-gray-900"
-//             >
-//               Learn More
-//             </motion.button>
-//           </Link>
-//         </div>
-//       </motion.div>
-//     </section>
-//   );
-// };
-
-// export default Hero;
 
 import React from "react";
 import { motion } from "framer-motion";
@@ -68,10 +12,16 @@ const Hero = () => {
         className="absolute w-full h-full bg-cover bg-center opacity-20"
         style={{ backgroundImage: `url(${backgroundImage})` }} // Setting the background image from the assets
       ></div>
-
-      {/* Overlay */}
-    
-
+      {/* <div>
+              <video
+        autoPlay
+        loop
+        muted
+        className="absolute w-full h-full object-cover opacity-40"
+        src="/drone-video.mp4"
+      ></video>
+      </div> */}
+      
       {/* Hero Content */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}

@@ -1,63 +1,111 @@
-
-
-// export default ServicesPage;
 import React, { useMemo } from "react";
-import { useNavigate } from "react-router-dom"; // For navigation
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import data from "../data/services.json";
+
 import image1 from "../assets/service1.jpg";
 import image2 from "../assets/service2.jpg";
 import image3 from "../assets/service3.jpg";
-import Footer from "../components/Footer";
 
+const imageMap = {
+  "service1.jpg": image1,
+  "service2.jpg": image2,
+  "service3.jpg": image3,
+};
 
-const ServiceCard = ({ name, description, image }) => {
-  const navigate = useNavigate(); 
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  }),
+};
+
+const ServiceCard = ({ id, service, highlights, image, index }) => {
+  const navigate = useNavigate();
+
+  const goToDetail = () => {
+    navigate(`/services/${id}`);
+  };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-      <img src={image} alt={name} className="w-full h-40 object-cover rounded-lg" />
-      <h3 className="text-xl font-semibold mt-4">{name}</h3>
-      <p className="mt-2 text-gray-600">{description}</p>
+    <motion.div
+      className="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"
+      custom={index}
+      initial="hidden"
+      animate="visible"
+      variants={cardVariants}
+    >
+      <img
+        src={image}
+        alt={service}
+        className="w-full h-40 object-cover rounded-lg"
+      />
+      <h3 className="text-xl font-semibold mt-4">{service}</h3>
+      <p className="mt-2 text-gray-600">
+        {highlights?.[0]?.description?.[0] || "Explore more about this service."}
+      </p>
       <button
-        className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-        onClick={() => navigate(`/service/${encodeURIComponent(name)}`)}
+        className="mt-4 bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition"
+        onClick={goToDetail}
       >
         Know More
       </button>
-    </div>
+    </motion.div>
   );
 };
 
 const ServicesPage = () => {
-  const services = useMemo(() => [
-    { name: "Aerial Photography", description: "Capture stunning aerial photos and videos.", image: image1 },
-    { name: "Surveillance", description: "Provide surveillance for security and monitoring.", image: image2 },
-    { name: "Agriculture Monitoring", description: "Monitor crops, weather, and growth patterns.", image: image3 },
-    { name: "Delivery Drones", description: "Quick and efficient delivery solutions.", image: image1 },
-        { name: "Inspection", description: "Inspect hard-to-reach areas with precision.", image:image1 },
-    { name: "Disaster Management", description: "Aid in disaster management with fast aerial surveys.", image: image2 },
-    { name: "Mapping & Surveying", description: "Create maps and survey land with drones.", image: image3 },
-    { name: "Construction Monitoring", description: "Monitor construction sites remotely.", image: image1 },
-    { name: "Search & Rescue", description: "Help in search and rescue operations.", image: image2 },
-    { name: "Infrastructure Maintenance", description: "Inspect infrastructure like bridges and power lines.", image: image3 }
-  ], []);
+  const services = useMemo(
+    () =>
+      data.map((service) => ({
+        ...service,
+        image: imageMap[service.image] || image1,
+      })),
+    []
+  );
 
   return (
     <>
       <Navbar />
-      <section className="py-16 bg-gray-100">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800">Our Full Range of Services</h2>
-          <p className="mt-4 text-lg text-gray-600">Explore all the services we offer with precision and reliability.</p>
-        </div>
+
+      <section className="py-40 bg-gray-100 text text-center">
+        <motion.div
+          className="text-center mb-16 px-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 relative inline-block">
+            <span className="relative z-10">
+              Our Full Range of <span className="text-blue-600">Services</span>
+            </span>
+            <span className="absolute left-0 bottom-1 w-full h-2 bg-blue-100 z-0 rounded-full"></span>
+          </h2>
+          <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-600">
+            Explore all the services we offer with precision, reliability, and a passion for excellence.
+          </p>
+        </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-8">
-          {services.map((service, index) => (
-            <ServiceCard key={index} {...service} />
-          ))}
+          {services.length === 0 ? (
+            <p className="text-red-500">No services available. Please check your JSON.</p>
+          ) : (
+            services.map((service, index) => (
+              <ServiceCard key={service.id} {...service} index={index} />
+            ))
+          )}
         </div>
       </section>
-      <Footer/>
+
+      <Footer />
     </>
   );
 };
