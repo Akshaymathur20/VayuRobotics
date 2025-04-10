@@ -2,34 +2,50 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+import services from "../data/services.json"
 import image1 from "../assets/service1.jpg";
 import image2 from "../assets/service2.jpg";
 import image3 from "../assets/service3.jpg";
 
-const services = [
-  { name: "Aerial Photography", image: image1 },
-  { name: "Surveillance", image: image2 },
-  { name: "Agriculture Monitoring", image: image3 },
-];
+const imageMap= {
+  'service1.jpg':image1,
+  'service2.jpg':image2,
+  'service3.jpg':image3,
+}
 
 const ServicesLanding = () => {
   return (
     <section className="py-16 bg-gray-100">
       <div className="text-center mb-12 px-4">
-        <h2 className="text-3xl font-bold text-gray-800">Our Services</h2>
-        <p className="mt-4 text-lg text-gray-600">Explore our amazing drone solutions.</p>
-      </div>
-
+       
+      <motion.div
+                className="text-center mb-16 px-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
+                <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 relative inline-block">
+                  <span className="relative z-10">
+                    Our  <span className="text-yellow-600">Services</span>
+                  </span>
+                  
+                </h2>
+                <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-600">
+                  Explore the services we offer with precision, reliability, and a passion for excellence.
+                </p>
+              </motion.div>
+              </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6 sm:px-10 md:px-20">
-        {services.map((service, index) => (
-          <motion.div
+        {services.slice(0,4).map((service, index) => (
+         <Link to={`/services/${service.id}`} key={service.id}>
+            <motion.div
             key={index}
             whileHover={{ scale: 1.03 }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
             className="relative w-full h-80 bg-cover bg-center rounded-xl shadow-lg overflow-hidden group"
-            style={{ backgroundImage: `url(${service.image})` }}
+            style={{backgroundImage:`url(${imageMap[service.image]})`}}
           >
             {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -37,10 +53,11 @@ const ServicesLanding = () => {
             {/* Title Always Visible */}
             <div className="absolute bottom-4 left-4 right-4">
               <h3 className="text-white text-xl sm:text-2xl font-semibold drop-shadow-md">
-                {service.name}
+                {service.service}
               </h3>
             </div>
           </motion.div>
+         </Link>
         ))}
       </div>
 
