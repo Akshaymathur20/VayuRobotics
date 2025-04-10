@@ -88,7 +88,7 @@ const ServicesPage = () => {
             <span className="relative z-10">
               Our Full Range of <span className="text-yellow-600">Services</span>
             </span>
-            <span className="absolute left-0 bottom-1 w-full h-2 bg-blue-100 z-0 rounded-full"></span>
+            
           </h2>
           <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-600">
             Explore all the services we offer with precision, reliability, and a passion for excellence.
