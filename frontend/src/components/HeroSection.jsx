@@ -1,7 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import backgroundImage from "../assets/hero-background.jpeg"; // Importing the background image
 
 const Hero = () => {
@@ -43,7 +43,7 @@ const Hero = () => {
           >
             Get Started
           </motion.button>
-          <Link to="about" smooth={true} duration={500}>
+          <Link to="/about" >
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}

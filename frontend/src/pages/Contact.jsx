@@ -54,7 +54,7 @@ const Contact = () => {
                   e.preventDefault();
                   alert("Thanks for reaching out!");
                 }}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-200 shadow-md"
+                className="bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-200 shadow-md"
               >
                 Send Message
               </button>
@@ -64,10 +64,10 @@ const Contact = () => {
           <div className="mt-12 border-t pt-6 text-center">
             <p className="text-gray-600">Or reach us directly:</p>
             <p className="mt-2 text-lg font-medium text-gray-800">
-              📧 <a href="mailto:info@dronetech.com" className="text-blue-600 hover:underline">vayurobotics@gmail.com</a>
+              📧 <a href="mailto:info@dronetech.com" className="text-yellow-600 hover:underline">vayurobotics@gmail.com</a>
             </p>
             <p className="mt-1 text-lg font-medium text-gray-800">
-              📞 <a href="tel:+919876543210" className="text-blue-600 hover:underline">+ 91 ***** *****</a>
+              📞 <a href="tel:+919876543210" className="text-yellow-600 hover:underline">+ 91 ***** *****</a>
             </p>
           </div>
         </div>

@@ -66,7 +66,7 @@ const ServicesLanding = () => {
           <motion.button
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
+            className="bg-yellow-600 text-white px-8 py-3 rounded-lg shadow-md hover:bg-yellow-700 transition duration-300"
           >
             More Services
           </motion.button>

@@ -19,7 +19,7 @@ const StatsSection = () => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
         {stats.map((stat) => (
           <div key={stat.label} className="bg-gray-100 p-6 rounded-lg shadow">
-            <h3 className="text-4xl font-bold text-blue-600">
+            <h3 className="text-4xl font-bold text-yellow-600">
               {inView && <CountUp end={stat.end} duration={2.5} separator="," />}+
             </h3>
             <p className="mt-2 text-lg text-gray-700">{stat.label}</p>

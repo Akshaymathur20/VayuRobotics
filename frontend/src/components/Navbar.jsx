@@ -9,7 +9,9 @@ const Navbar = () => {
     <nav className="bg-white shadow-md fixed w-full z-50">
       <div className="container mx-auto px-4 py-8 flex justify-between items-center">
         {/* Logo */}
+        <Link to="/">
         <div className="text-3xl font-bold text-yellow-400">Vayu Robotics</div>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-10 text-xl text-gray-700">
@@ -20,9 +22,11 @@ const Navbar = () => {
         </div>
 
         {/* CTA Button */}
-        <button className="hidden md:block bg-yellow-500 text-black px-4 py-2 rounded-lg shadow-md hover:bg-yellow-600">
+       <Link to="/contact">
+       <button className="hidden md:block bg-yellow-500 text-black px-4 py-2 rounded-lg shadow-md hover:bg-yellow-600">
           Contact Us
         </button>
+       </Link>
 
         {/* Mobile Menu Icon */}
         <div className="md:hidden text-gray-700 cursor-pointer" onClick={() => setNavOpen(!navOpen)}>
@@ -38,9 +42,11 @@ const Navbar = () => {
             <Link to="/services" className="cursor-pointer hover:text-blue-500" onClick={() => setNavOpen(false)}>Services</Link>
             <Link to="/about" className="cursor-pointer hover:text-blue-500" onClick={() => setNavOpen(false)}>About</Link>
             <Link to="/contact" className="cursor-pointer hover:text-blue-500" onClick={() => setNavOpen(false)}>Contact</Link>
+            <Link to="contact">
             <button className="bg-blue-500 text-black px-4 py-2 rounded-lg shadow-md hover:bg-yellow-600">
-              Get Started
+              Contact Us
             </button>
+            </Link>
           </div>
         </div>
       )}
